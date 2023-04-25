@@ -1,1 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pathway Extreme', sans-serif;
+}
+
+/* body and background */
+body {
+    font-family: 'Pathway Extreme', sans-serif;
+    color: rgb(255, 115, 0);
+    font-size: larger;
+}
+
+#background {
+    background-color: rgb(241, 235, 235);
+}
+
+/* heading */
+h1 {
+    text-align: center;
+    font-size: 350%;
+}
