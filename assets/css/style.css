@@ -93,3 +93,15 @@ p {
     border: 6px solid #000000;
     border-radius: 20px;
 }
+
+#start-btn:hover {
+    border-color: green;
+}
+
+#next-btn:hover {
+    border-color: green;
+}
+
+.hidden {
+    display: none;
+}
