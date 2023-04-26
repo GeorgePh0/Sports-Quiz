@@ -95,11 +95,39 @@ p {
     border-radius: 20px;
 }
 
+#end-btn {
+    background-color: #ff7b00;
+    color: whitesmoke;
+    width: 180px;
+    height: 60px;
+    font-size: 35px;
+    border: 6px solid #000000;
+    border-radius: 20px;
+}
+
+#restart-btn {
+    background-color: #ff7b00;
+    color: whitesmoke;
+    width: 180px;
+    height: 60px;
+    font-size: 35px;
+    border: 6px solid #000000;
+    border-radius: 20px;
+}
+
 #start-btn:hover {
     border-color: green;
 }
 
 #next-btn:hover {
+    border-color: green;
+}
+
+#end-btn:hover {
+    border-color: green;
+}
+
+#restart-btn:hover {
     border-color: green;
 }
 
