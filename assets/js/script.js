@@ -4,6 +4,7 @@ const endButton = document.getElementById('end-btn');
 const restartButton = document.getElementById('restart-btn');
 const questionAreaElement = document.getElementById('question-area');
 const welcomeMsgElement = document.getElementById('welcome-msg');
+const endMsgElement = document.getElementById('end-msg');
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answers-btn');
 
@@ -63,6 +64,7 @@ function selectAnswer(sa) {
     if (shuffleQuestion.length > currentQuestion + 1) {
         nextButton.classList.remove('hidden');
     } else {
+        nextButton.classList.add('hidden');
         endButton.classList.remove('hidden');
     }
 }
@@ -85,6 +87,9 @@ function clearAnswer(element) {
 function endQuiz() {
     console.log("End Quiz");
     endButton.classList.add('hidden');
+    questionElement.classList.add('hidden');
+    answerElement.classList.add('hidden');
+    endMsgElement.classList.remove('hidden');
     restartButton.classList.remove('hidden');
 }
 
