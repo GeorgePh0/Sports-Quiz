@@ -1,4 +1,5 @@
 const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
 const questionAreaElement = document.getElementById('question-area');
 const welcomeMsgElement = document.getElementById('welcome-msg');
 const questionElement = document.getElementById('question');
@@ -19,11 +20,29 @@ function startGame() {
 }
 
 function setNextQuestion() {
+    resetQuestion();
     displayQuestion(shuffleQuestion[currentQuestion]);
 }
 
 function displayQuestion(question) {
     questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerElement.appendChild(button);
+    });
+}
+
+function resetQuestion() {
+    nextButton.classList.add('hidden');
+    while (answerElement.firstChild) {
+        answerElement.removeChild(answerElement.firstChild);
+    }
 }
 
 function selectAnswer() {
