@@ -1,23 +1,29 @@
 const startButton = document.getElementById('start-btn');
 const questionAreaElement = document.getElementById('question-area');
 const welcomeMsgElement = document.getElementById('welcome-msg');
+const questionElement = document.getElementById('question');
+const answerElement = document.getElementById('answers-btn');
+
+let shuffleQuestion, currentQuestion;
 
 startButton.addEventListener('click', startGame);
 
 function startGame() {
     console.log('Start Quiz');
     startButton.classList.add('hidden');
+    shuffleQuestion = questions.sort(() => Math.random() - 0.5);
+    currentQuestion = 0;
     questionAreaElement.classList.remove('hidden');
     welcomeMsgElement.classList.add('hidden');
     setNextQuestion();
 }
 
 function setNextQuestion() {
-    
+    displayQuestion(shuffleQuestion[currentQuestion]);
 }
 
 function displayQuestion(question) {
-    
+    questionElement.innerText = question.question;
 }
 
 function selectAnswer() {
