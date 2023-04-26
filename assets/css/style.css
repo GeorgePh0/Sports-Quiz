@@ -47,6 +47,7 @@ p {
 
 #question {
     font-size: xx-large;
+    margin: 50px 0;
 }
 
 .btn-table {
@@ -56,7 +57,7 @@ p {
     gap: 15px;
 }
 
-#btn-answer {
+.btn {
     background-color: #ff7b00;
     color: whitesmoke;
     font-size: 35px;
@@ -64,7 +65,7 @@ p {
     border-radius: 20px;
 }
 
-#btn-answer:hover {
+.btn:hover {
     border-color: green;
 }
 
