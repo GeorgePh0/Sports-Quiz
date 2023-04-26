@@ -1,5 +1,6 @@
 const startButton = document.getElementById('start-btn');
 const questionAreaElement = document.getElementById('question-area');
+const welcomeMsgElement = document.getElementById('welcome-msg');
 
 startButton.addEventListener('click', startGame);
 
@@ -7,6 +8,7 @@ function startGame() {
     console.log('Start Quiz');
     startButton.classList.add('hidden');
     questionAreaElement.classList.remove('hidden');
+    welcomeMsgElement.classList.add('hidden');
     setNextQuestion();
 }
 
