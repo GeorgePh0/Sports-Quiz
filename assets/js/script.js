@@ -8,6 +8,10 @@ const answerElement = document.getElementById('answers-btn');
 let shuffleQuestion, currentQuestion;
 
 startButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', () => {
+    currentQuestion++;
+    setNextQuestion();
+});
 
 function startGame() {
     console.log('Start Quiz');
@@ -45,8 +49,28 @@ function resetQuestion() {
     }
 }
 
-function selectAnswer() {
+function selectAnswer(sa) {
+    const selectedButton = sa.target;
+    const correct = selectedButton.correct;
+    checkAnswer(document.body, correct);
+    Array.from(answerElement.children).forEach(button => {
+        checkAnswer(button, button.dataset.correct);
+    });
+}
 
+function checkAnswer(element, correct) {
+    clearAnswer(element);
+    if (correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('wrong');
+    }
+    nextButton.classList.remove('hidden');
+}
+
+function clearAnswer(element) {
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
 
 

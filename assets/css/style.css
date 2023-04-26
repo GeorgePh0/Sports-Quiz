@@ -103,6 +103,14 @@ p {
     border-color: green;
 }
 
+.correct {
+    background-color: rgb(0, 202, 0);
+}
+
+.wrong {
+    background-color: rgb(243, 6, 6);
+}
+
 .hidden {
     display: none;
 }
