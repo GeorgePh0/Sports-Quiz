@@ -1,11 +1,26 @@
 const startButton = document.getElementById('start-btn');
+const questionAreaElement = document.getElementById('question-area');
 
 startButton.addEventListener('click', startGame);
 
 function startGame() {
     console.log('Start Quiz');
+    startButton.classList.add('hidden');
+    questionAreaElement.classList.remove('hidden');
+    setNextQuestion();
 }
 
+function setNextQuestion() {
+    
+}
+
+function displayQuestion(question) {
+    
+}
+
+function selectAnswer() {
+
+}
 
 
 const questions = [
