@@ -29,6 +29,7 @@ function startGame() {
 }
 
 function setNextQuestion() {
+    console.log("Question")
     resetQuestion();
     displayQuestion(shuffleQuestion[currentQuestion]);
 }
