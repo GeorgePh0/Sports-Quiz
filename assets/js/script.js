@@ -7,10 +7,8 @@ const welcomeMsgElement = document.getElementById('welcome-msg');
 const endMsgElement = document.getElementById('end-msg');
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answers-btn');
-const scoreCounterElement = document.getElementById('score-counter');
 
 let shuffleQuestion, currentQuestion;
-let scoreCounter = 0;
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
