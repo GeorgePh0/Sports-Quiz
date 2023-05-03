@@ -242,11 +242,15 @@ function resetQuestion() {
 
 function selectAnswer(sa) {
     const selectedButton = sa.target;
-    const correct = selectedButton.correct;
+    let correct = selectedButton.classList.contains('correct');
     checkAnswer(document.body, correct);
     Array.from(answerElement.children).forEach(button => {
         checkAnswer(button, button.dataset.correct);
     });
+    console.log(sa.target);
+    console.log(selectedButton, 'correct');
+    console.log(correct, 'correct');
+    console.log(selectedButton.correct, 'button correct');
     if (shuffleQuestion.length > currentQuestion + 1) {
         nextButton.classList.remove('hidden');
     } else {
@@ -254,8 +258,10 @@ function selectAnswer(sa) {
         endButton.classList.remove('hidden');
     }
     if (correct) {
+        console.log(correct, 'correct');
         correctElement.classList.remove('hidden');
     } else {
+        console.log(correct,'incorrect triggered, value for correct');
         incorrectElement.classList.remove('hidden');
     }
 }
