@@ -19,7 +19,6 @@ endButton.addEventListener('click', endQuiz);
 restartButton.addEventListener('click', reloadGame);
 
 function startGame() {
-    console.log("Start Quiz");
     startButton.classList.add('hidden');
     shuffleQuestion = questions.sort(() => Math.random() - 0.5);
     currentQuestion = 0;
@@ -29,7 +28,6 @@ function startGame() {
 }
 
 function setNextQuestion() {
-    console.log("Question")
     resetQuestion();
     displayQuestion(shuffleQuestion[currentQuestion]);
 }
@@ -86,7 +84,6 @@ function clearAnswer(element) {
 }
 
 function endQuiz() {
-    console.log("End Quiz");
     endButton.classList.add('hidden');
     questionElement.classList.add('hidden');
     answerElement.classList.add('hidden');
