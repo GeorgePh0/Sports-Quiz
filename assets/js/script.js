@@ -190,6 +190,8 @@ const welcomeMsgElement = document.getElementById('welcome-msg');
 const endMsgElement = document.getElementById('end-msg');
 const questionElement = document.getElementById('question');
 const answerElement = document.getElementById('answers-btn');
+const correctElement = document.getElementById('correct-txt');
+const incorrectElement = document.getElementById('incorrect-txt');
 
 let shuffleQuestion, currentQuestion;
 
@@ -213,6 +215,8 @@ function startGame() {
 function setNextQuestion() {
     resetQuestion();
     displayQuestion(shuffleQuestion[currentQuestion]);
+    correctElement.classList.add('hidden');
+    incorrectElement.classList.add('hidden');
 }
 
 function displayQuestion(question) {
@@ -248,6 +252,11 @@ function selectAnswer(sa) {
     } else {
         nextButton.classList.add('hidden');
         endButton.classList.remove('hidden');
+    }
+    if (correct) {
+        correctElement.classList.remove('hidden');
+    } else {
+        incorrectElement.classList.remove('hidden');
     }
 }
 
