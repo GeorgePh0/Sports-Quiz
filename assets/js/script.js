@@ -1,100 +1,3 @@
-const startButton = document.getElementById('start-btn');
-const nextButton = document.getElementById('next-btn');
-const endButton = document.getElementById('end-btn');
-const restartButton = document.getElementById('restart-btn');
-const questionAreaElement = document.getElementById('question-area');
-const welcomeMsgElement = document.getElementById('welcome-msg');
-const endMsgElement = document.getElementById('end-msg');
-const questionElement = document.getElementById('question');
-const answerElement = document.getElementById('answers-btn');
-
-let shuffleQuestion, currentQuestion;
-
-startButton.addEventListener('click', startGame);
-nextButton.addEventListener('click', () => {
-    currentQuestion++;
-    setNextQuestion();
-});
-endButton.addEventListener('click', endQuiz);
-restartButton.addEventListener('click', reloadGame);
-
-function startGame() {
-    startButton.classList.add('hidden');
-    shuffleQuestion = questions.sort(() => Math.random() - 0.5);
-    currentQuestion = 0;
-    questionAreaElement.classList.remove('hidden');
-    welcomeMsgElement.classList.add('hidden');
-    setNextQuestion();
-}
-
-function setNextQuestion() {
-    resetQuestion();
-    displayQuestion(shuffleQuestion[currentQuestion]);
-}
-
-function displayQuestion(question) {
-    questionElement.innerText = question.question;
-    question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('btn');
-        if (answer.correct) {
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener('click', selectAnswer);
-        answerElement.appendChild(button);
-    });
-}
-
-function resetQuestion() {
-    nextButton.classList.add('hidden');
-    while (answerElement.firstChild) {
-        answerElement.removeChild(answerElement.firstChild);
-    }
-}
-
-function selectAnswer(sa) {
-    const selectedButton = sa.target;
-    const correct = selectedButton.correct;
-    checkAnswer(document.body, correct);
-    Array.from(answerElement.children).forEach(button => {
-        checkAnswer(button, button.dataset.correct);
-    });
-    if (shuffleQuestion.length > currentQuestion + 1) {
-        nextButton.classList.remove('hidden');
-    } else {
-        nextButton.classList.add('hidden');
-        endButton.classList.remove('hidden');
-    }
-}
-
-function checkAnswer(element, correct) {
-    clearAnswer(element);
-    if (correct) {
-        element.classList.add('correct');
-    } else {
-        element.classList.add('wrong');
-    }
-    nextButton.classList.remove('hidden');
-}
-
-function clearAnswer(element) {
-    element.classList.remove('correct');
-    element.classList.remove('wrong');
-}
-
-function endQuiz() {
-    endButton.classList.add('hidden');
-    questionElement.classList.add('hidden');
-    answerElement.classList.add('hidden');
-    endMsgElement.classList.remove('hidden');
-    restartButton.classList.remove('hidden');
-}
-
-function reloadGame() {
-    window.location.reload();
-}
-
 const questions = [
     {
         question: 'Which country won the first ever World Cup in 1930?',
@@ -277,3 +180,100 @@ const questions = [
         ]
     }
 ];
+
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const endButton = document.getElementById('end-btn');
+const restartButton = document.getElementById('restart-btn');
+const questionAreaElement = document.getElementById('question-area');
+const welcomeMsgElement = document.getElementById('welcome-msg');
+const endMsgElement = document.getElementById('end-msg');
+const questionElement = document.getElementById('question');
+const answerElement = document.getElementById('answers-btn');
+
+let shuffleQuestion, currentQuestion;
+
+startButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', () => {
+    currentQuestion++;
+    setNextQuestion();
+});
+endButton.addEventListener('click', endQuiz);
+restartButton.addEventListener('click', reloadGame);
+
+function startGame() {
+    startButton.classList.add('hidden');
+    shuffleQuestion = questions.sort(() => Math.random() - 0.5);
+    currentQuestion = 0;
+    questionAreaElement.classList.remove('hidden');
+    welcomeMsgElement.classList.add('hidden');
+    setNextQuestion();
+}
+
+function setNextQuestion() {
+    resetQuestion();
+    displayQuestion(shuffleQuestion[currentQuestion]);
+}
+
+function displayQuestion(question) {
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerElement.appendChild(button);
+    });
+}
+
+function resetQuestion() {
+    nextButton.classList.add('hidden');
+    while (answerElement.firstChild) {
+        answerElement.removeChild(answerElement.firstChild);
+    }
+}
+
+function selectAnswer(sa) {
+    const selectedButton = sa.target;
+    const correct = selectedButton.correct;
+    checkAnswer(document.body, correct);
+    Array.from(answerElement.children).forEach(button => {
+        checkAnswer(button, button.dataset.correct);
+    });
+    if (shuffleQuestion.length > currentQuestion + 1) {
+        nextButton.classList.remove('hidden');
+    } else {
+        nextButton.classList.add('hidden');
+        endButton.classList.remove('hidden');
+    }
+}
+
+function checkAnswer(element, correct) {
+    clearAnswer(element);
+    if (correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('wrong');
+    }
+    nextButton.classList.remove('hidden');
+}
+
+function clearAnswer(element) {
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
+}
+
+function endQuiz() {
+    endButton.classList.add('hidden');
+    questionElement.classList.add('hidden');
+    answerElement.classList.add('hidden');
+    endMsgElement.classList.remove('hidden');
+    restartButton.classList.remove('hidden');
+}
+
+function reloadGame() {
+    window.location.reload();
+}
