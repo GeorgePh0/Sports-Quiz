@@ -1,3 +1,4 @@
+// questions for the quiz
 const questions = [
     {
         question: 'Which country won the first ever World Cup in 1930?',
@@ -181,6 +182,7 @@ const questions = [
     }
 ];
 
+// const variables for the quiz
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
 const endButton = document.getElementById('end-btn');
@@ -193,16 +195,21 @@ const answerElement = document.getElementById('answers-btn');
 const correctElement = document.getElementById('correct-txt');
 const incorrectElement = document.getElementById('incorrect-txt');
 
+// variables for shuffling the questions
 let shuffleQuestion, currentQuestion;
 
-startButton.addEventListener('click', startGame);
+startButton.addEventListener('click', startGame); //start button event listener
 nextButton.addEventListener('click', () => {
     currentQuestion++;
     setNextQuestion();
-});
-endButton.addEventListener('click', endQuiz);
-restartButton.addEventListener('click', reloadGame);
+}); // next button event listener
+endButton.addEventListener('click', endQuiz); // end button event listener
+restartButton.addEventListener('click', reloadGame); // restart button event listener
 
+/**
+ * function to begin the quiz
+ */
+// multiple statemnets needed in order for the quiz to display the question
 function startGame() {
     startButton.classList.add('hidden');
     shuffleQuestion = questions.sort(() => Math.random() - 0.5);
@@ -212,6 +219,9 @@ function startGame() {
     setNextQuestion();
 }
 
+/**
+ * function to go to the next question
+ */
 function setNextQuestion() {
     resetQuestion();
     displayQuestion(shuffleQuestion[currentQuestion]);
@@ -219,6 +229,9 @@ function setNextQuestion() {
     incorrectElement.classList.add('hidden');
 }
 
+/**
+ * function to display the question and multiple choice answers
+ */
 function displayQuestion(question) {
     questionElement.innerText = question.question;
     question.answers.forEach(answer => {
@@ -233,6 +246,9 @@ function displayQuestion(question) {
     });
 }
 
+/**
+ * function to reset display after clicking next and moving to the next question
+ */
 function resetQuestion() {
     nextButton.classList.add('hidden');
     while (answerElement.firstChild) {
@@ -240,6 +256,9 @@ function resetQuestion() {
     }
 }
 
+/**
+ * function to select an answer
+ */
 function selectAnswer(sa) {
     const selectedButton = sa.target;
     let correct = selectedButton.getAttribute('data-correct') === 'true';
@@ -247,11 +266,6 @@ function selectAnswer(sa) {
     Array.from(answerElement.children).forEach(button => {
         checkAnswer(button, button.dataset.correct);
     });
-    console.log(sa.target);
-    console.log(selectedButton.classList.contains('correct'));
-    console.log(selectedButton, 'correct');
-    console.log(correct, 'correct');
-    console.log(selectedButton.correct, 'button correct');
     if (shuffleQuestion.length > currentQuestion + 1) {
         nextButton.classList.remove('hidden');
     } else {
@@ -259,14 +273,15 @@ function selectAnswer(sa) {
         endButton.classList.remove('hidden');
     }
     if (correct) {
-        console.log(correct, 'correct');
         correctElement.classList.remove('hidden');
     } else {
-        console.log(correct,'incorrect triggered, value for correct');
         incorrectElement.classList.remove('hidden');
     }
 }
 
+/**
+ * function to check the answer and change the colour of the multiple answers to the correct and incorrect colours
+ */
 function checkAnswer(element, correct) {
     clearAnswer(element);
     if (correct) {
@@ -277,11 +292,17 @@ function checkAnswer(element, correct) {
     nextButton.classList.remove('hidden');
 }
 
+/**
+ * function to clear answer colours before moving to the next question
+ */
 function clearAnswer(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
 }
 
+/**
+ * function to end the quiz
+ */
 function endQuiz() {
     endButton.classList.add('hidden');
     questionElement.classList.add('hidden');
@@ -292,6 +313,9 @@ function endQuiz() {
     incorrectElement.classList.add('hidden');
 }
 
+/**
+ * function to reload the page and take you to the main page
+ */
 function reloadGame() {
     window.location.reload();
 }
