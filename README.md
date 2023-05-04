@@ -85,6 +85,32 @@ This is there so people who do not see colour can also have text to tell them wh
 
 ## **Deployment**
 
+This section will show the process of how I deployed my website.
+
+### Github Pages
+
+- The site I used to deploy my website was GitHub. These are the steps I took to deploy my website
+    - From the Github repository, click on the settings tab.
+    - On the left hand side you will see "Pages". Click on the tab Pages.
+    - From there go to the branch section and click the drop down menu and select "main".
+    - Click "save" and wait a couple of minutes for the website to deploy.
+    - After a few minutes a URL will be available for you to access the site.
+
+![Github Pages](assets/readme-images/github.jpg)
+
 link to the deployed website - https://georgeph0.github.io/Sports-Quiz/
 
 ## **Credits**
+
+### Images
+
+- All images were sourced through the links below.
+
+    - [Quiz Icon](https://www.dailymail.co.uk/news/article-3513204/Pub-quiz-kings-brainy-barred-happened-JANE-FRYER-joined-team-tournament-Clue-won-t-inviting-back.html)
+    - [Football Questions](https://www.goal.com/en-gb/news/best-football-quiz-questions-trivia-answers/1dfwcyp3388zg1lon8wlit8q42#world-cup)
+    - [Tennis Questions](https://thesporting.blog/blog/tennis-quiz-questions-with-answers-tennis-trivia-quiz)
+    - [Cricket Questions](https://thesporting.blog/blog/cricket-quiz-questions-and-answers-cricket-trivia-quiz)
+    - [Boxing Questions](https://www.radiotimes.com/quizzes/pub-quiz-boxing/)
+    - [Shuffle Questions](https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj)
+    - [forEach()](https://www.w3schools.com/jsref/jsref_foreach.asp)
+    - [appendChild()](https://www.w3schools.com/jsref/met_node_appendchild.asp)
