@@ -75,6 +75,14 @@ This is there so people who do not see colour can also have text to tell them wh
 
 ### Fixed bugs
 
+- Steps on how I fixed my issue:
+    - 1. I had an issue of not being able to show the text "Correct" when a user selects an answer.
+    - 2. I added in console logs to see if selectedButton and Correct were both defined.
+    - 3. I found that correct was undefined and that the class "correct" was being added after the user had clicked the button.
+    - 4. The correct answer has a value "data-correct" which I used instead and was able to have the if statement work.
+
+![Correct and Incorrect text](assets/readme-images/fix-correct-text.jpg)
+
 ## **Deployment**
 
 link to the deployed website - https://georgeph0.github.io/Sports-Quiz/
