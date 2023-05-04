@@ -66,10 +66,33 @@ This is there so people who do not see colour can also have text to tell them wh
 ### Validator
 
 - HTML
+    - ![HTML validator](assets/readme-images/html-validator.jpg)
 
 - CSS
+    - ![CSS validator](assets/readme-images/css-validator.jpg)
 
 - Javascript
+    - ![Javascript validator](assets/readme-images/javascript-validator.jpg)
+
+### *Responsiveness*
+
+#### Desktop
+
+- All pages are responsive for a desktop screen: 1600x922px
+
+#### Laptop
+
+- All pages are responsive for a laptop screen: 1280x802px
+
+#### Tablet
+
+- All pages are responsive for a tablet screen: 768x1024px
+
+#### Mobile
+
+- All pages are responsive for a mobile screen: 320x480px
+
+![Responsiveness](assets/readme-images/am-i-responsive.jpg)
 
 ## **Bugs**
 

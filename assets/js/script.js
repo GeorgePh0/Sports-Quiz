@@ -242,13 +242,13 @@ function resetQuestion() {
 
 function selectAnswer(sa) {
     const selectedButton = sa.target;
-    let correct = selectedButton.getAttribute('data-correct') === 'true'
+    let correct = selectedButton.getAttribute('data-correct') === 'true';
     checkAnswer(document.body, correct);
     Array.from(answerElement.children).forEach(button => {
         checkAnswer(button, button.dataset.correct);
     });
     console.log(sa.target);
-    console.log(selectedButton.classList.contains('correct'))
+    console.log(selectedButton.classList.contains('correct'));
     console.log(selectedButton, 'correct');
     console.log(correct, 'correct');
     console.log(selectedButton.correct, 'button correct');
