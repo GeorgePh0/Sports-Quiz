@@ -94,6 +94,10 @@ This is there so people who do not see colour can also have text to tell them wh
 
 ![Responsiveness](assets/readme-images/am-i-responsive.jpg)
 
+### Lighthouse
+
+![Lighthouse](assets/readme-images/lighthouse.jpg)
+
 ## **Bugs**
 
 ### Fixed bugs
@@ -105,6 +109,14 @@ This is there so people who do not see colour can also have text to tell them wh
     - 4. The correct answer has a value "data-correct" which I used instead and was able to have the if statement work.
 
 ![Correct and Incorrect text](assets/readme-images/fix-correct-text.jpg)
+
+### Unfixed bugs
+
+- There is a bug when the screen reaches a size of 750px. I have located that it is in the media query within the css file.
+As seen in the picture below, the answers on the last question do not disappear when pressing the "end" button, instead remain due to the height being adjusted to 200px
+when at a screen size of 750px. This bug has not yet been fixed due to having a deadline that needed to be met. The bug will be fixed in due course.
+
+![unfixed bug](assets/readme-images/unfixed-bug.jpg)
 
 ## **Deployment**
 
