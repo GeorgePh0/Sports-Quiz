@@ -148,3 +148,30 @@ p {
 .hidden {
     display: none;
 }
+
+@media screen and (max-width: 1120px) {
+    #question {
+        font-size: 1.4rem;
+        height: 50px;
+    }
+    .btn {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #question {
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+    
+    #answers-btn {
+        height: 200px;
+    }
+    
+    .btn-table {
+        display: grid;
+        grid-template-columns: none;
+        margin: 25px 0;
+    }
+}
