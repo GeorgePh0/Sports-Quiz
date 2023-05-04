@@ -288,6 +288,8 @@ function endQuiz() {
     answerElement.classList.add('hidden');
     endMsgElement.classList.remove('hidden');
     restartButton.classList.remove('hidden');
+    correctElement.classList.add('hidden');
+    incorrectElement.classList.add('hidden');
 }
 
 function reloadGame() {
